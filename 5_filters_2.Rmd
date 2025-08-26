@@ -1,4 +1,4 @@
-# Image filtering 2
+# Image filtering II
 
 3.3.5 onward from: https://lectures.scientific-python.org/packages/scikit-image/index.html
 

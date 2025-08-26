@@ -1,4 +1,4 @@
-# Image filtering 1
+# Image filtering I
 
 A common operation we will want to perform on images is *filtering*. This is where we modify all of the pixels in an image according to a certain rule or algorithm, often based on other pixel values within the "local neighbourhood" of a given pixel. Filtering techniques can be used to remove noise from an image, or to achieve specific visual effects, amongst other purposes.
 
