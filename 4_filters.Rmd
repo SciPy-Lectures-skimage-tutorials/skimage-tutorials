@@ -817,7 +817,7 @@ Indeed, we need a strategy for this. There are actually many options for how a k
 
 **For now we will not worry about the edges, we just use the kernel only where it "fits" within the array.** In effect, this just ignores pixels near the edges of the image. Presently, most of these pixels at the edges of the image are 0, and there is some distance between the "i" and the image edges, so ignoring the pixels near the edge will not affect the "i" shape too much itself. The image below illustrates this, for a generic array:
 
-![](images/kernel_general_resize.png)
+![](images/kernel_general.png)
 
 The cell below defines a function that will apply this mean kernel, step-by-step in a for loop to the whole image array, only for pixel neighbourhoods where the kernel "fits" over the central pixel, without extending outside of the image:
 

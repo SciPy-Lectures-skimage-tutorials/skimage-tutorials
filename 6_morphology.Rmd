@@ -19,7 +19,7 @@ jupyter:
 
 We already encountered structuring elements - (of which kernels are one type) - on [earlier](4_filters) [pages](5_filters_2). A structuring element is a grid of a certain shape - you can think of it as a "template" - which is used to define the "neighbourhood" of pixels which an image processing operation affects. A (3, 3) structuring element is a square which affects 9 pixels - we might alter the image by centering this structuring element over every pixel, and replacing each pixel with the mean of the other pixels in it's "neighbourhood":
 
-![](images/kernel_general_resize.png)
+![](images/kernel_general.png)
 
 We have seen structuring elements applied during filtering operations, courtesy of the `ski.filters` module. Morphological operations also make use of structuring elements, though in morphological operations, structuring elements are binary (contain only 0s and 1s). Morphological operations differ from the filtering operations we have seen previously because they are specifically [related to the shape (...or, well, *morphology*) of features with in the image](https://www.cs.auckland.ac.nz/courses/compsci773s1c/lectures/ImageProcessing-html/topic4.htm). This contrasts with operations like [mean filtering](5_filters) which "spread" pixel values around within a neighbourhood, rather than identifying and altering features with a specific shape/morphology.
 
@@ -139,7 +139,7 @@ plt.imshow(eroded_two_squares);
 
 What happened here? Well, again a "match" only occurs for two pixels in the image, the pixels at the centre of each white square. This illustration below shows what happened:
 
-![](images/hit_n_miss_with_text_2_resized.png)
+![](images/hit_n_miss_with_text_2.png)
 
 
 All other "neighbourhoods" did not match the structuring element, and so the values in the neighbourhood were lowered to 0, 0 being the lowest value in each neighbourhood.
@@ -176,7 +176,7 @@ Why did this happen? The cell below illustrates, again using green ticks for "ma
 
 Remember that a "clash" means the central pixel "dies"; a "match" means the central pixel "survives":
 
-![](images/hit_n_miss_with_text_3_resized.png)
+![](images/hit_n_miss_with_text_3.png)
 
 
 # Dilation
@@ -231,7 +231,7 @@ plt.imshow(dilated_square_the_circle);
 Why did this happen? The image below explains:
 
 
-![](images/hit_n_miss_with_text_3_dilation_resize.png)
+![](images/hit_n_miss_with_text_3_dilation.png)
 <!-- #endregion -->
 
 For erosion, all of the "clashing" pixels in the right-hand square get *lowered* to their neighbourhood minimum, in this case 0, and so they "die" and fade into the black background.

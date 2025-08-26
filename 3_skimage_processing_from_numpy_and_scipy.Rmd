@@ -13,7 +13,7 @@ jupyter:
     name: python3
 ---
 
-# `skimage` processing from `numpy` and `scipy`
+# Image processing in Scikit-image, via NumPy and Scipy
 
 We saw on the [previous pages](0_images_as_numpy_arrays.Rmd) how images can be represented as NumPy arrays. This page will explore foundational image processing techniques, as operations on the values in a NumPy image array. First, we will explore how to acheive specific effects using NumPy and SciPy - and we will demonstrate what the operations are doing to an image at the level of the array pixels. Following that, we will show how more sophisticated extensions of these techniques can be implemented with Scikit-image, focusing on how it is often the same NumPy and Scipy operations that Sci-kit image is using "under the hood".
 
