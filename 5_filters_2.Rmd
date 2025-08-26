@@ -262,10 +262,8 @@ plt.suptitle('skimage.filters.gaussian()')
 plt.show()
 ```
 
-::: {exercise-start}
-:label: krazy-kernel
-:class: dropdown
-:::
+ex krazy-kernel
+
 
 ## From meeting: move this exercise to later, becuase the explanation involves a discussion of integer overflow. Maybe show them the scaling, then the exercise purpose is to use `astype(float)` on the original array to avoid overflow. Have a hint about "255 + 1" and the effect on the image. Also discuss whether kernels need to sum to 1 (yes, if we want to preserve the scaling of the image e.g. if it sums to 100, all the pixel values will be times 100 etc.).
 
@@ -319,29 +317,20 @@ other_gaussian_kernel = ...
 other_gaussian_filtered_small_square = ...
 ```
 
-::: {exercise-end}
-:::
 
-::: {solution-start} krazy-kernel
-:class: dropdown
-:::
-
-SOLUTION: scale the kernel to sum to 1. Multiply by the reciprocal of the sum of the kernel:
-
+SOLUTION - scale the kernel to sum to 1. Multiply by the reciprocal of the sum of the kernel:
 
 ![](images/almost_gaussian_solution.png)
 
 
 ```{python}
-# SOLUTION: scale the kernel to sum to 1
+# SOLUTION - scale the kernel to sum to 1
 almost_gaussian_filtered_camera = ndi.correlate(camera,
                                                weights=1/almost_gaussian_kernel.sum() * almost_gaussian_kernel)
                                                      
 plt.matshow(almost_gaussian_filtered_camera);
 ```
 
-::: {solution-end}
-:::
 
 # Median filter
 
