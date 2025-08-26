@@ -13,7 +13,7 @@ jupyter:
     name: python3
 ---
 
-# What is an image? - images as NumPy arrays
+# What is an image? - Images as NumPy arrays
 
 This page will examine the fundamental representation of images as NumPy arrays.
 

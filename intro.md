@@ -1,4 +1,4 @@
-# Scikit-image from NumPy and SciPy
+# Scikit-image via NumPy and SciPy
 
 This is a tutorial series covering foundational image manipulation and processing using [Scikit-image](https://scikit-image.org). The series also explores image processing using two of the foundational libraries that Scikit-image is built from: [NumPy](https://numpy.org) and [SciPy](https://scipy.org). 
 

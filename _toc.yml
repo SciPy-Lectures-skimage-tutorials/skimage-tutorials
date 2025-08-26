@@ -1,9 +1,8 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Pandas from Numpy
+  - caption: Scikit-image via NumPy and SciPy
     chapters:
-      - file: 00_intro_page
       - file: 0_images_as_numpy_arrays
       - file: 1_colour_images_as_numpy_arrays
       - file: 2_skimage_intro
