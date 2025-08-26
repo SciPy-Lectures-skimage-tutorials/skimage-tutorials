@@ -6,4 +6,6 @@ The tutorials first cover the mechanics of representing images as NumPy arrays. 
 
 ## Many sections are interactive
 
-You can interact with many of the sections in this textbook, with the “Interact” button at the top of the page. This will take you to a free online service that allows you to execute the code in the section, to generate the tables and figures. **There are exercises on most pages which you can complete by writing your own code.** We also encourage you to play with the code on the pages by changing the code and running it to better understand the behaviour of the objects and functions.
+You can interact with many of the sections in this textbook, with the “Interact” button at the top of the page. This will take you to a free online service that allows you to execute the code in the section, to generate the tables and figures. 
+
+**There are exercises on most pages which you can complete by writing your own code.** We also encourage you to play with the code on the pages by changing the code and running it to better understand the behaviour of the objects and functions.
