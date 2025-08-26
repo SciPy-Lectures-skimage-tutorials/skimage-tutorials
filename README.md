@@ -1,6 +1,7 @@
-Earlier content adapted from: https://lectures.scientific-python.org/advanced/image_processing/index.html#opening-and-writing-to-image-files
+Adpated from:
+* https://lectures.scientific-python.org/advanced/image_processing/index.html#opening-and-writing-to-image-files
 
-Later content based on: https://lectures.scientific-python.org/packages/scikit-image/index.html
+* https://lectures.scientific-python.org/packages/scikit-image/index.html
 
 ## To do
 
