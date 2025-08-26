@@ -1,7 +1,7 @@
 # Built website
-#_build/
+_build/
 # Output for cfdcode install.
-#build/
+build/
 *.egg-info/
 __pycache__/
 _references.bib
