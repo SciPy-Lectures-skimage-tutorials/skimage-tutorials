@@ -1,12 +1,12 @@
 # Book settings
-title : "Pandas from Numpy"
+title : "Scikit-image from NumPy and SciPy"
 author: Peter Rush, Matthew Brett
-logo: images/pandas_numpy.jpg
+logo: images/colourwheel.png
 email: peter_rush@live.co.uk
 # >- starts a multiline string, where newlines replaced by spaces, and final
 # newlines are stripped.
 description: >-
-  Tutorial pages introducing Pandas via Numpy
+  Tutorial pages introducing Scikit-image via NumPy and SciPy.
 
 execute:
   # 'cache' attempts to cache the results.
@@ -30,10 +30,10 @@ html:
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
-  baseurl: https://pxr687.github.io/ASPP_pandas_tutorials
+  baseurl: https://pxr687.github.io/SciPy-Lectures-skimage-tutorials
 
 repository:
-  url: https://github.com/pxr687/ASPP_pandas_tutorials
+  url: https://github.com/pxr687/SciPy-Lectures-skimage-tutorials
   branch: main
 
 launch_buttons:

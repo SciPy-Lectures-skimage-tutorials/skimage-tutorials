@@ -1,9 +1,7 @@
 # Requirements for notebooks / Binderhub
 skimage
 matplotlib
-pandas >= 1.5
 xlrd
 openpyxl
 scipy
 jupytext
-statsmodels
