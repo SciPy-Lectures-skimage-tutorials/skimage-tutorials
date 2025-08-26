@@ -145,7 +145,7 @@ show_attributes(doubled_i)
 ```
 
 ::: {exercise-start}
-:label: eye-!
+:label: i-!
 :class: dropdown
 :::
 
@@ -173,7 +173,7 @@ i_exclam = ...
 ::: {exercise-end}
 :::
 
-::: {solution-start} eye-!
+::: {solution-start} i-!
 :class: dropdown
 :::
 
@@ -225,6 +225,9 @@ Min Pixel Value: -1.0
 split_i = ...
 ```
 
+::: {exercise-end}
+:::
+
 ::: {solution-start} split-i
 :class: dropdown
 :::
@@ -260,9 +263,10 @@ White areas (pixel = 1) indicate a change between pixels in the horizontal direc
 
 
 ::: {solution-end}
+:::
 
 
-### Resizing an image with `skimage`
+## Resizing an image with `skimage`
 
 The `ski.transform` module contains a function called `resize`. It is probably easy to guess what `ski.transform.resize()` does. It takes an input image and changes its size. Because all computer images are at least 2-D arrays, this involves changing the dimensionality of the image. Let's demonstrate this with the following image array:
 
@@ -456,7 +460,7 @@ for i, i_2 in enumerate(np.arange(361, step=45)):
     plt.yticks([])
 ```
 
-### Rotating an image with `skimage`
+## Rotating an image with `skimage`
 
 Let's now look now at how rotating image arrays is handled in `skimage`. Image rotation, which we saw above using `np.rot90` and `scipy.ndimage.rotate()` can be achieved using the straightforwardly named `ski.transform.rotate()`, and the syntax works identically to `scipy.ndimage.rotate()`. We're thirsty and caffeine-deprived, so let's get some `coffee`:
 
@@ -643,6 +647,9 @@ plt.imshow(look_at_me);
 ```
 
 If in doubt, check the `dtype`!
+
+::: {solution-end}
+:::
 
 
 ::: {exercise-start}
@@ -901,6 +908,10 @@ camera_masked_solution[mask_solution] = 1
 plt.imshow(camera_masked_solution);
 ```
 
+::: {solution-end}
+:::
+
+
 # Inverting image colours
 
 We saw *colour inversion* on an [earlier page](0_images_as_numpy_arrays.Rmd). This is where all the pixel values in an image are, shockingly, inverted: high numbers become low numbers and vice versa:
@@ -948,7 +959,7 @@ for i in np.arange(3):
 plt.imshow(inverted_colourwheel);
 ```
 
-### Inverting colours with `skimage`
+## Inverting colours with `skimage`
 
 `ski.util.invert()` handles colour inversion, we simply pass it a colour NumPy image array and voilà!:
 
@@ -1123,7 +1134,7 @@ print(binary_check)
 plt.matshow(binary_check);
 ```
 
-We can also easily acheive this conversion in `skimage` - see the [filtering page](5_filters) for more detail. For now, we can use the `ski.filters.threshold_minimum()` function. This supplies us a recommended threshold value to attempt to divide the array pixels into two classes e.g. two classes where the pixels in each class are maximally different from pixels in the other class:
+We can also easily acheive this conversion in `skimage` - see the [filtering page](5_filters_2) for more detail. For now, we can use the `ski.filters.threshold_minimum()` function. This supplies us a recommended threshold value to attempt to divide the array pixels into two classes e.g. two classes where the pixels in each class are maximally different from pixels in the other class:
 
 ```{python}
 # Get a recommended threshold from `skimage`.
@@ -1256,7 +1267,7 @@ plt.imshow(grey_wheel);
 :::
 
 
-### Colour to greyscale conversion with `skimage`
+## Colour to greyscale conversion with `skimage`
 
 As always, the `ski.color` module has us covered here with the `rgb2gray()` function. We simply pass it the colour array that we want to convert to greyscale, without the need for the luminance formula:
 
@@ -1269,7 +1280,7 @@ plt.imshow(grey_colourwheel_from_ski);
 
 # Summary
 
-This page has shown how to implement some fundamental image processing operations with NumPy, SciPy and Scikit-image. The next page will delve into [image filtering](5_filters).
+This page has shown how to implement some fundamental image processing operations with NumPy, SciPy and Scikit-image. The next page will delve into [image filtering](5_filters_2).
 
 
 # References

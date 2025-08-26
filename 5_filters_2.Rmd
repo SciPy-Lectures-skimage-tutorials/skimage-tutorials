@@ -16,6 +16,23 @@ Reference: skimage tutorials (check versions), scipy lecture notes
 
 Reference: https://jni.github.io/i2k-skimage-napari/lectures/1_image_filters.html
 
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.ndimage as ndi
+import skimage as ski
+
+# Set 'gray' as the default colormap
+plt.rcParams['image.cmap'] = 'gray'
+
+# Set NumPy precision to 2 decimal places
+np.set_printoptions(precision=2)
+
+#  Custom functions for illustrations, and to quickly report image attributes.
+from noise_illustration import generate_image, original_image
+from gaussian_illustration import make_gaussian_kernel
+from show_attributes import show_attributes
+```
 
 # TO DO HERE: SHARPENING, BLURRING
 
@@ -112,7 +129,7 @@ big_gaussian_kernel.round(2)
 ```
 Can you see any pattern in the arrangement of the numbers? Where are the high numbers, where are the low numbers?
 
-We will also plot this kernel in 3-D, as with the last kernel. Again, the integer index locations of the array form the horizontal ($x$ and $y$) axis values, and the values within the array are plotted on the vertical ($z$) axis::
+We will also plot this kernel in 3-D, as with the last kernel. Again, the integer index locations of the array form the horizontal ($x$ and $y$) axis values, and the values within the array are plotted on the vertical ($z$) axis:
 
 ### From meeting: show this as a surface also
 
@@ -175,6 +192,7 @@ Both of these kernels, in relative terms, are quite small. As such, it is easier
 Below, we make a pixelated version of `camera`:
 
 ```{python}
+camera = ski.data.camera()
 pixelated_camera = ski.transform.rescale(camera, 0.2) # Rescale to 20% of original size.
 plt.imshow(pixelated_camera);
 ```
@@ -301,7 +319,6 @@ other_gaussian_kernel = ...
 other_gaussian_filtered_small_square = ...
 ```
 
-<!-- #region -->
 ::: {exercise-end}
 :::
 
@@ -313,7 +330,7 @@ SOLUTION: scale the kernel to sum to 1. Multiply by the reciprocal of the sum of
 
 
 ![](images/almost_gaussian_solution.png)
-<!-- #endregion -->
+
 
 ```{python}
 # SOLUTION: scale the kernel to sum to 1
@@ -446,6 +463,8 @@ plt.imshow(edgy_horizontal);
 Applied to more complex images, this can have some pretty cool effects:
 
 ```{python}
+coffee_grey = ski.color.rgb2gray(ski.data.coffee())
+
 # Plot the original image.
 plt.imshow(coffee_grey);
 ```
@@ -521,27 +540,6 @@ plt.subplot(1, 4, 4)
 plt.title("Both Combined")
 plt.imshow(both_coffee);
 ```
-
-::: {exercise-start}
-:label: the-end
-:class: dropdown
-:::
-
-My exercise.
-
-::: {exercise-end}
-:::
-
-::: {solution-start} the-edge
-:class: dropdown
-:::
-
-My solution.
-
-::: {solution-end}
-:::
-
-
 
 # Sobel and Roberts filters
 

@@ -40,7 +40,7 @@ plt.imshow(noisy);
 
 Any idea what it is? Maybe you can determine what signal is in there. We trust that it is at least somewhat ambiguous, to most readers.
 
-We saw simple threshold filtering on an [earlier page](3_skimage_processing_from_numpy_and_scipy.). This is where we select a threshold value, and binarize the image using that value. So a given pixel becomes `True` if a pixel is more intense than the threshold, and `False` if it is lower. 
+We saw simple threshold filtering on an [earlier page](3_skimage_processing_from_numpy_and_scipy). This is where we select a threshold value, and binarize the image using that value. So a given pixel becomes `True` if a pixel is more intense than the threshold, and `False` if it is lower. 
 
 The aim here is typically to split the pixels into distinct classes, based on their intensity values. We can use the `ndarray` `.ravel()` method to view a historgram of the pixel intensities, in order to find a threshold that might be useful to use in a filter:
 
@@ -158,7 +158,7 @@ print(random_i_filtered_9)
 plt.matshow(random_i_filtered_9);
 ```
 
-### Image segmentation via threshold filtering
+# Image segmentation via threshold filtering
 
 This threshold filtering technique can be useful for segregating the foreground from the background of real images, like `camera`:
 
@@ -253,7 +253,7 @@ plt.imshow(camera > crude_threshold);
 Stylish! Someone should put that on a t-shirt...
 
 
-### Threshold filters in `skimage`
+## Threshold filters in `skimage`
 
 `skimage` contains many threshold filters, the cell below uses the `dir()` function to show the available selection:
 
@@ -970,7 +970,7 @@ show_attributes(neg_sum_filter_coins)
 :::
 
 
-## Convolution
+# Convolution
 
 In normal practice, filtering operations which use kernels rely on [convolution](https://en.wikipedia.org/wiki/Convolution). In fact, one name for the kernel is "convolution kernel". In image processing, convolution is similar to the process we saw with our crude mean filter - we "walk" a kernal across our whole image, centering it on every pixel, and perform a computation which modifies the central pixel based on the other values in the kernal/neightbourhood.
 
@@ -1146,7 +1146,7 @@ As with many filtering operations, the effect of altering aspects of the filteri
 
 
 ::: {exercise-start}
-:label: strange_filter_coffee
+:label: strange-filter-coffee
 :class: dropdown
 :::
 
@@ -1176,7 +1176,7 @@ Min Pixel Value: -49
 ::: {exercise-end}
 :::
 
-::: {solution-start} strange_filter_coffee
+::: {solution-start} strange-filter-coffee
 :class: dropdown
 :::
 
@@ -1219,7 +1219,7 @@ This is quite a strange kernel to apply! But it shows us how easy it is to achie
 :::
 
 
-### Mean filtering with `skimage`
+## Mean filtering with `skimage`
 
 We can implement a mean filter using the `ski.filters.rank.mean()` function. `skimage` prefers the term `footprint` to "kernel", but the meaning is the same. We supply a small matrix with which to "walk" through the image, centring the kernel on every pixel, and modifying that central pixel's value based on the values of the other pixels in it's neighbourhood, with the size and shape of the neighbourhood being defined by the kernel (`footprint`). 
 

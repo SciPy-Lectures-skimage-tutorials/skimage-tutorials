@@ -23,7 +23,7 @@ We already encountered structuring elements - (of which kernels are one type) - 
 
 We have seen structuring elements applied during filtering operations, courtesy of the `ski.filters` module. Morphological operations also make use of structuring elements, though in morphological operations, structuring elements are binary (contain only 0s and 1s). Morphological operations differ from the filtering operations we have seen previously because they are specifically [related to the shape (...or, well, *morphology*) of features with in the image](https://www.cs.auckland.ac.nz/courses/compsci773s1c/lectures/ImageProcessing-html/topic4.htm). This contrasts with operations like [mean filtering](5_filters) which "spread" pixel values around within a neighbourhood, rather than identifying and altering features with a specific shape/morphology.
 
-### Structuring elements
+# Structuring elements
 
 Because morphological operations are part of image processing, then involve the modification of array pixel values, which is [all image processing is](3_skimage_processing_from_numpy_and_scipy.). In morphological operations, the structural element will alter pixel values *depending upon the match between the shape of the structural element and the shape of the pixels in the "neighbourhood" of the structural element*. E.g. with the "neighbourhood" being the pixels currently under the structural element. The structural element, typically, is centred once on every pixel in an image, and this central pixel is modified (or not) depending upon the match betweent the shape of the structural element and the shape depicted by the pixels in that neighbourhood.
 
@@ -84,7 +84,7 @@ Using `ski.morphology.diamond(radius=1)` gives us a diamond shaped structuring e
 diamond.shape
 ```
 
-### Erosion
+# Erosion
 
 The fundamental operations of morphological image processing are *erosion* and *dilation*. These affect bright and dark regions in an image. We will consider erosion first.
 
@@ -179,7 +179,7 @@ Remember that a "clash" means the central pixel "dies"; a "match" means the cent
 ![](images/hit_n_miss_with_text_3_resized.png)
 
 
-## Dilation
+# Dilation
 
 The other foundational operation in morphological image processing is *dilation*. Dilation works the same as erosion in terms of centering a structuring element on each pixel and looking for "matches" or "clashes". However, it does exactly the opposite thing for pixels where it finds a "clash". Where, in the event of a "clash", erosion *lowers* central pixel values down to the neighbourhood minimum, dilation instead *raises* central pixel to the value of the neighbourhood maximum.
 
@@ -245,7 +245,7 @@ So, [remember](https://scikit-image.org/docs/0.25.x/auto_examples/applications/p
 *Dilation enlarges bright regions and shrinks dark regions.*
 
 
-## Morphology using more complex images
+# Morphology using more complex images
 
 Let's apply some of this to more complex images. Fittingly, we will use a terrifying picture of a [Xenomorph](https://en.wikipedia.org/wiki/Xenomorph), which at the time of writing Wikipedia defines as "a fictional endoparasitoid extraterrestrial species that serves as the main antagonist of the Alien and Alien vs. Predator franchises".
 
@@ -402,7 +402,7 @@ plt.imshow(inverted_xeno_big_diamond);
 :::
 
 
-## Skeletonize
+# Skeletonize
 
 In keeping with the horror theme of the `xenomorph` image, and the legacy of the [`smiley`](3_skimage_processing_from_numpy_and_scipy.) array, let's look at the `ski.morpholoy.skeletonize()` function. 
 

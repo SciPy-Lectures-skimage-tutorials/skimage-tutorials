@@ -15,7 +15,7 @@ jupyter:
 
 # Introducing Scikit-image
 
-Previously, we [have](1_colour_images_as_numpy_arrays) [explored](](0_images_as_numpy_arrays)) the representation of images as NumPy arrays. [Scikit-image](https://scikit-image.org) (`skimage`) is a Python image prcoessing package which is built from NumPy and SciPy, along with some other libraries, and uses NumPy arrays as its fundamental image representations. This page will show some foundational aspects of `skimage`, focusing on its coherence with the NumPy image array concepts we saw on the last two pages.
+Previously, we [have](1_colour_images_as_numpy_arrays) [explored](](0_images_as_numpy_arrays) the representation of images as NumPy arrays. [Scikit-image](https://scikit-image.org) (`skimage`) is a Python image prcoessing package which is built from NumPy and SciPy, along with some other libraries, and uses NumPy arrays as its fundamental image representations. This page will show some foundational aspects of `skimage`, focusing on its coherence with the NumPy image array concepts we saw on the last two pages.
 
 # Images are arrays, arrays are images
 
@@ -118,7 +118,7 @@ plt.matshow(back_to_black);
 
 Most Scikit-image functions work like  this - they take a NumPy array as input, do something to the array pixel values, then return an altered image array. As we mentioned above, under the hood `skimage` is often using NumPy and SciPy functions to do the image manipulation, something we will explore in more detail on the [next page](3_skimage_processing_from_numpy_and_scipy). 
 
-You may ask why the maximum pixel values are now 0.21, rather than 1? This is because of the [formula](https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color) that `rgb2gray()` uses to do the conversion; we will also show this in detail in the [*Colourspaces* section later in this page](PUT_LINK_HERE).
+You may ask why the maximum pixel values are now 0.21, rather than 1? This is because of the [formula](https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color) that `rgb2gray()` uses to do the conversion; we will also show this in detail in the *Colourspaces* section later in this page.
 
 # Scikit-image ships with built-in images
 
@@ -271,7 +271,7 @@ ski.io.imsave("images/smiley_swirled.jpg", # Path to save image to.
 
 Issues with `dtype` can be a source of errors, so it is important to be aware of what `dtype` your image arrays are using. Fortunately, as we have seen, to help remedy or avoid such errors, `skimage` makes it easy to convert between `dtypes`, where such errors do occur.
 
-#### Small image arrays, big image arrays
+# Small image arrays, big image arrays
 Before we move on, a note on `swirl` - we said earlier that it is easier to understand a manipulation at the array pixel-level using a small (low-resolution) array, but easier to appreciate its global effect on a larger (high-resolution) image array. We saw the effect of `swirl` on `smiley_swirled`, but the nature of the visual effect can be seen more clearly when we apply it to `coffee`:
 
 ```{python}
@@ -474,7 +474,7 @@ plt.imshow(value_slice)
 plt.title('Value Channel');
 ```
 
-### Colourspaces 2: transparency in the 3rd dimension
+# Colourspaces 2: transparency in the 3rd dimension
 
 Now, other colourspaces involve arrays of different array `shape`s. For instance, some image arrays are `(n, m, 4)` in `shape` - so that's `n` rows, `m` columns and `4` slices in the third dimension.
 
